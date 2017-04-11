@@ -11,5 +11,16 @@ public class PhotographerTest{
     camera = new Camera(); 
   }
 
+  @Test
+  public void camerasStartsEmpty(){
+    assertEquals(0, photographer.cameraCount());
+  }
+
+  @Test
+  public void canAddCamera(){
+    photographer.add(camera);
+    assertEquals(1, photographer.cameraCount());
+  }
+
 
 }
