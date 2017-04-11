@@ -2,10 +2,11 @@ import java.util.*;
 
 public class Photographer {
   private ArrayList<Printable> printables;
-  private HashMap<String, Integer> journal = new HashMap<String, Integer>();
+  private HashMap<String, Integer> journal;
 
   public Photographer(){
     this.printables = new ArrayList<Printable>();
+    this.journal = new HashMap<String, Integer>();
   }
 
   public int printableCount(){
@@ -29,5 +30,22 @@ public class Photographer {
       words += printable.printDetails() + " ";
     }
     return words;
+  }
+
+  public void addToJournal(String day, Integer count){
+    journal.put(day, count);
+  }
+
+  public int journalCount(){
+    return journal.size();
+  }
+
+  public int journalTotal(){
+    int total = 0;
+    Set<String> keys = journal.keySet();
+    for(String key : keys ){
+      total += journal.get(key);
+    }
+    return total;
   }
 }

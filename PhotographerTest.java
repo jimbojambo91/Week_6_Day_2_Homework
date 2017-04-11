@@ -36,7 +36,20 @@ public class PhotographerTest{
     photographer.add(analogueCamera);
     String result = "Nikon 34T Polaroid 600 ";
     assertEquals(result, photographer.returnAllPrintables());
+  }
 
+  @Test
+  public void canAddToJournal(){
+    photographer.addToJournal("day1", 5);
+    assertEquals(photographer.journalCount(), 1);
+  }
+
+  @Test
+  public void journalTotal(){
+    photographer.addToJournal("day1", 5);
+    photographer.addToJournal("day2", 2);
+    photographer.addToJournal("day3", 3);
+    assertEquals(10, photographer.journalTotal());
   }
 
 
