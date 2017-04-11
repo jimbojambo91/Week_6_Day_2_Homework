@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Photographer {
   private ArrayList<Printable> printables;
+  private HashMap<String, Integer> journal = new HashMap<String, Integer>();
 
   public Photographer(){
     this.printables = new ArrayList<Printable>();
@@ -20,5 +21,13 @@ public class Photographer {
       return printables.remove(0);
     }
     return null;
+  }
+
+  public String returnAllPrintables(){
+    String words = "" ;
+    for(Printable printable : this.printables){
+      words += printable.printDetails() + " ";
+    }
+    return words;
   }
 }
