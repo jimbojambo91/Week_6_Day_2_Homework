@@ -1,3 +1,5 @@
-public class Camera {
+public abstract class Camera {
+
   
+
 }
