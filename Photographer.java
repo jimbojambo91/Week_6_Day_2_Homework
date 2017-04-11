@@ -14,4 +14,11 @@ public class Photographer {
    public void add(Camera camera){
     cameras.add(camera);
   }
+
+  public Camera remove(){
+    if(cameraCount() > 0) {
+      return cameras.remove(0);
+    }
+    return null;
+  }
 }
